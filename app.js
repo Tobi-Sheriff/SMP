@@ -1,6 +1,6 @@
-// if (process.env.NODE_ENV !== "production") {
-//     require('dotenv').config();
-// }
+if (process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
 
 // import express from 'express';
 const express = require('express');
@@ -20,7 +20,6 @@ const ExpressError = require('./utils/ExpressError');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require("connect-mongo");
-const port = process.env.PORT || 3000;
 
 
 
@@ -117,7 +116,7 @@ app.use('/markets', marketRoutes);
 // })
 
 
-
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`SERVING ON PORT ${port}...`);
 })
