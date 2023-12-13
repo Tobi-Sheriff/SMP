@@ -1,6 +1,6 @@
-// if (process.env.NODE_ENV !== "production") {
-//     require('dotenv').config();
-// }
+if (process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
 
 // import express from 'express';
 const express = require('express');
@@ -23,9 +23,9 @@ const MongoStore = require("connect-mongo");
 
 
 
-const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/SMP';
+// const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/SMP';
 // { useNewUrlParser: true, useUnifiedTopology: true }
-mongoose.connect(dbUrl)
+mongoose.connect(process.env.DB_URL)
     .then(() => {
         console.log("MONGO CONNECTION OPEN!!!")
     })
