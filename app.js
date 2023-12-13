@@ -23,8 +23,9 @@ const MongoStore = require("connect-mongo");
 
 
 
-const dbUrl = process.env.DB_URL || 'mongodb://0.0.0.0:27017/SMP';
-mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/SMP';
+// { useNewUrlParser: true, useUnifiedTopology: true }
+mongoose.connect(dbUrl)
     .then(() => {
         console.log("MONGO CONNECTION OPEN!!!")
     })
