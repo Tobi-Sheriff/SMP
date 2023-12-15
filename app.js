@@ -118,10 +118,10 @@ app.use('/markets', marketRoutes);
 
 
 const port = process.env.PORT || 3000;
-console.log(process.env.PORT);
-console.log(process.env);
-console.log("MARGIN");
-console.log(process);
-app.listen(port, () => {
+// console.log(process.env.PORT);
+// console.log(process.env);
+// console.log("MARGIN");
+// console.log(process);
+app.listen(port, "0.0.0.0.", () => {
     console.log(`SERVING ON PORT ${port}...`);
 })
