@@ -23,9 +23,9 @@ const MongoStore = require("connect-mongo");
 
 
 
-const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/SMP';
+// const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/SMP';
 // { useNewUrlParser: true, useUnifiedTopology: true }
-mongoose.connect(dbUrl)
+mongoose.connect(process.env.DB_URL )
     .then(() => {
         console.log("MONGO CONNECTION OPEN!!!")
     })
@@ -49,7 +49,7 @@ app.use(mongoSanitize({
 
 const secret = process.env.SECRET || 'justapreproductionsecret!';
 const store = new MongoStore({
-    mongoUrl: 'mongodb://0.0.0.0:27017/SMP',
+    mongoUrl: process.env.DB_URL,
     secret,
     touchAfter: 24 * 60 * 60
 });
@@ -104,10 +104,10 @@ app.use('/', userRoutes);
 app.use('/markets', marketRoutes);
 // app.use('/campgrounds/:id/reviews', reviewRoutes);
 
+
 // app.all('*', (req, res, next) => {
 //     next(new ExpressError('Page Not Found', 404))
 // })
-
 
 
 // app.use((err, req, res, next) => {
@@ -117,11 +117,11 @@ app.use('/markets', marketRoutes);
 // })
 
 
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 // console.log(process.env.PORT);
 // console.log(process.env);
 // console.log("MARGIN");
 // console.log(process);
-app.listen(port, "0.0.0.0.", () => {
-    console.log(`SERVING ON PORT ${port}...`);
+app.listen(PORT, () => {
+    console.log(`SERVING ON PORT ${PORT}...`);
 })
