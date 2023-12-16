@@ -59,7 +59,7 @@ app.use(mongoSanitize({
 
 const secret = process.env.SECRET || 'justapreproductionsecret!';
 const store = new MongoStore({
-    mongoUrl: 'dbUrl',
+    mongoUrl: process.env.DB_URL,
     secret,
     touchAfter: 24 * 60 * 60
 });
