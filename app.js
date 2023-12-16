@@ -23,9 +23,9 @@ const MongoStore = require("connect-mongo");
 
 
 
-// const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/SMP';
+const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/SMP';
 // { useNewUrlParser: true, useUnifiedTopology: true }
-mongoose.connect(process.env.DB_URL )
+mongoose.connect(dbUrl)
     .then(() => {
         console.log("MONGO CONNECTION OPEN!!!")
     })
@@ -49,7 +49,7 @@ app.use(mongoSanitize({
 
 const secret = process.env.SECRET || 'justapreproductionsecret!';
 const store = new MongoStore({
-    mongoUrl: process.env.DB_URL,
+    mongoUrl: 'dbUrl',
     secret,
     touchAfter: 24 * 60 * 60
 });
