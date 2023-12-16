@@ -20,20 +20,30 @@ const ExpressError = require('./utils/ExpressError');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require("connect-mongo");
+const PORT = process.env.PORT || 3000;
 
 
-
-const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/SMP';
+// const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/SMP';
 // { useNewUrlParser: true, useUnifiedTopology: true }
-mongoose.connect(dbUrl)
-    .then(() => {
-        console.log("MONGO CONNECTION OPEN!!!")
-    })
-    .catch(err => {
-        console.log("MONGO CONNECTION ERROR!!!!")
-        console.log(err)
-    })
+// mongoose.connect(dbUrl)
+//     .then(() => {
+//         console.log("MONGO CONNECTION OPEN!!!")
+//     })
+//     .catch(err => {
+//         console.log("MONGO CONNECTION ERROR!!!!")
+//         console.log(err)
+//     })
 
+    
+const connectDB = async () => {
+    try {
+      const conn = await mongoose.connect(process.env.DB_URL);
+      console.log(`MongoDB Connected: ${conn.connection.host}`);
+    } catch (error) {
+      console.log(error);
+      process.exit(1);
+    }
+}
 
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
@@ -117,11 +127,17 @@ app.use('/markets', marketRoutes);
 // })
 
 
-const PORT = process.env.PORT || 3000;
 // console.log(process.env.PORT);
 // console.log(process.env);
 // console.log("MARGIN");
 // console.log(process);
-app.listen(PORT, () => {
-    console.log(`SERVING ON PORT ${PORT}...`);
+// app.listen(PORT, () => {
+//     console.log(`SERVING ON PORT ${PORT}...`);
+// })
+
+
+connectDB().then(() => {
+    app.listen(PORT, () => {
+        console.log("listening for requests");
+    })
 })
