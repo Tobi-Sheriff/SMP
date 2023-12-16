@@ -1,6 +1,6 @@
-if (process.env.NODE_ENV !== "production") {
-    require('dotenv').config();
-}
+// if (process.env.NODE_ENV !== "production") {
+//     require('dotenv').config();
+// }
 
 // import express from 'express';
 const express = require('express');
@@ -20,6 +20,8 @@ const ExpressError = require('./utils/ExpressError');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require("connect-mongo");
+
+require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 
 
@@ -115,9 +117,9 @@ app.use('/markets', marketRoutes);
 // app.use('/campgrounds/:id/reviews', reviewRoutes);
 
 
-// app.all('*', (req, res, next) => {
-//     next(new ExpressError('Page Not Found', 404))
-// })
+app.all('*', (req, res, next) => {
+    next(new ExpressError('Page Not Found', 404))
+})
 
 
 // app.use((err, req, res, next) => {
