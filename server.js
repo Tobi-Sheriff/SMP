@@ -1,7 +1,3 @@
-// if (process.env.NODE_ENV !== "production") {
-//     require('dotenv').config();
-// }
-
 // import express from 'express';
 const express = require('express');
 const app = express();
@@ -25,18 +21,6 @@ require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 
 
-// const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/SMP';
-// { useNewUrlParser: true, useUnifiedTopology: true }
-// mongoose.connect(dbUrl)
-//     .then(() => {
-//         console.log("MONGO CONNECTION OPEN!!!")
-//     })
-//     .catch(err => {
-//         console.log("MONGO CONNECTION ERROR!!!!")
-//         console.log(err)
-//     })
-
-    
 const connectDB = async () => {
     try {
       const conn = await mongoose.connect(process.env.DB_URL);
@@ -117,11 +101,9 @@ app.use('/markets', marketRoutes);
 // app.use('/campgrounds/:id/reviews', reviewRoutes);
 
 
-app.all('*', (req, res, next) => {
-    next(new ExpressError('Page Not Found', 404))
-})
-
-
+// app.all('*', (req, res, next) => {
+//     next(new ExpressError('Page Not Found', 404))
+// })
 // app.use((err, req, res, next) => {
 //     const { statusCode = 500 } = err;
 //     if (!err.message) err.message = 'Oh No, Something Went Wrong!'
@@ -140,6 +122,6 @@ app.all('*', (req, res, next) => {
 
 connectDB().then(() => {
     app.listen(PORT, () => {
-        console.log("listening for requests");
+        console.log("listening for requests on", PORT);
     })
 })
