@@ -94,8 +94,11 @@ const requireLogin = (req, res, next) => {
 
 
 
-app.use('/markets', marketRoutes);
+app.get('/', (req, res) => {
+    res.render('welcome-page');
+});
 app.use('/', userRoutes);
+app.use('/markets', marketRoutes);
 // app.use('/campgrounds/:id/reviews', reviewRoutes);
 
 
