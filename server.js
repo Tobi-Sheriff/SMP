@@ -16,11 +16,10 @@ const ExpressError = require('./utils/ExpressError');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require("connect-mongo");
-
 require('dotenv').config();
-const PORT = process.env.PORT || 3000;
 
 
+// const PORT = process.env.PORT || 3000;
 const connectDB = async () => {
     try {
       const conn = await mongoose.connect(process.env.DB_URL);
@@ -121,7 +120,7 @@ app.use('/markets', marketRoutes);
 
 
 connectDB().then(() => {
-    app.listen(PORT, () => {
-        console.log("listening for requests on", PORT);
+    app.listen(process.env.PORT, () => {
+        console.log("listening for requests on...");
     })
 })
