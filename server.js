@@ -94,9 +94,8 @@ const requireLogin = (req, res, next) => {
 
 
 
-
-app.use('/', userRoutes);
 app.use('/markets', marketRoutes);
+app.use('/', userRoutes);
 // app.use('/campgrounds/:id/reviews', reviewRoutes);
 
 
