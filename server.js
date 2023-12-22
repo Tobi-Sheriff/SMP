@@ -19,10 +19,11 @@ const MongoStore = require("connect-mongo");
 require('dotenv').config();
 
 
-// const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
+const dbUrl = process.env.DB_URL || 'mongodb://0.0.0.0:27017/SMP';
 const connectDB = async () => {
     try {
-      const conn = await mongoose.connect(process.env.DB_URL);
+      const conn = await mongoose.connect(dbUrl);
       console.log(`MongoDB Connected: ${conn.connection.host}`);
     } catch (error) {
       console.log(error);
@@ -44,7 +45,7 @@ app.use(mongoSanitize({
 
 const secret = process.env.SECRET || 'justapreproductionsecret!';
 const store = new MongoStore({
-    mongoUrl: process.env.DB_URL,
+    mongoUrl: dbUrl,
     secret,
     touchAfter: 24 * 60 * 60
 });
@@ -112,17 +113,9 @@ app.use('/markets', marketRoutes);
 // })
 
 
-// console.log(process.env.PORT);
-// console.log(process.env);
-// console.log("MARGIN");
-// console.log(process);
-// app.listen(PORT, () => {
-//     console.log(`SERVING ON PORT ${PORT}...`);
-// })
-
 
 connectDB().then(() => {
-    app.listen(process.env.PORT, () => {
-        console.log("listening for requests on...");
+    app.listen(PORT, () => {
+        console.log("listening for requests on...", PORT);
     })
 })
