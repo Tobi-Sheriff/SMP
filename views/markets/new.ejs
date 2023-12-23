@@ -5,34 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/uploads.css">
+    <link rel="stylesheet" href="../css/uploads.css">
+
+    <!-- BOOTSTRAP CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
     <div class="row">
         <h1 class="text-center">New Market</h1>
         <div class="col-md-6 offset-md-3">
-            <form action="/campgrounds" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <form action="/markets" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label class="form-label" for="title">Title</label>
-                    <input class="form-control" type="text" id="title" name="campground[title]" required>
+                    <input class="form-control" type="text" id="title" name="market[title]" required>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="location">Location</label>
-                    <input class="form-control" type="text" id="location" name="campground[location]" required>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="price">Campground Price</label>
+                    <label class="form-label" for="price">Price</label>
                     <div class="input-group">
                         <span class="input-group-text" id="price-label">$</span>
                         <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price"
-                            aria-describedby="price-label" name="campground[price]" required>
+                            aria-describedby="price-label" name="market[price]" required>
                     </div>
                     <div class="valid-feedback">
                         Looks good!
@@ -41,7 +38,7 @@
 
                 <div class="mb-3">
                     <label class="form-label" for="description">Description</label>
-                    <textarea class="form-control" type="text" id="description" name="campground[description]"
+                    <textarea class="form-control" type="text" id="description" name="market[description]"
                         required></textarea>
                     <div class="valid-feedback">
                         Looks good!
@@ -57,366 +54,13 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-success">Add Campground</button>
+                    <button class="btn btn-success">Add Item</button>
                 </div>
             </form>
         </div>
     </div>
 
-
-    <div class="formPage-stage form-all  " data-page-id="1" data-page-qid="1" style="max-width: 752px;">
-        <ul class="clearfix form-section page-section page_1"
-            style="margin: 0px; font-size: 16px; color: rgb(44, 51, 69);">
-            <li id="id_16" data-type="control_head" data-qid="16" data-order="1" data-selectioncount="0"
-                class="form-line clearfix isNotSelected form-input-wide form-input-wide-line-fix lineAlignment-Left"
-                tabindex="0" aria-label="Heading Field " role="group" draggable="false" style="z-index: 1;">
-                <div class="question-wrapper questionWrapper ">
-                    <div class="form-input-wide" data-layout="full" style="position: relative;">
-                        <div class="form-header-group  header-large">
-                            <div class="header-text httal htvam">
-                                <h1 id="header_16" class="form-header" data-component="header">
-                                    <div class="editor-container editorHasText" style="display: inline-block;">
-                                        <div class="inlineEditor" placeholder="Type a header" format="text"
-                                            contenteditable="true" data-gramm="false">Recruitment Submission</div>
-                                    </div>
-                                </h1>
-                                <div id="subHeader_16" class="form-subHeader">
-                                    <div class="editor-container editorNoText" style="display: inline-block;">
-                                        <div class="inlineEditor" placeholder="Type a subheader" format="text"
-                                            contenteditable="true" data-gramm="false"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dragHandle">
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                </div>
-                <div id="app_wizards" class="moodular collabUsers-userList"></div>
-            </li>
-            <li id="id_3" data-type="control_fullname" data-qid="3" data-order="2" data-selectioncount="0"
-                class="form-line clearfix isNotSelected lineAlignment-Auto-Top isRequired" tabindex="0"
-                aria-label="Full Name Field Required " role="group" style="z-index: 1;">
-                <div class="question-wrapper questionWrapper "><label id="label_3"
-                        class="form-label form-label-top form-label-auto form-required-field" for="none"
-                        style="width: 100%;">
-                        <div class="editor-container editorHasText" style="display: inline-block; width: 100%;">
-                            <div class="inlineEditor" placeholder="Type a question" format="text" contenteditable="true"
-                                data-gramm="false" style="width: 100%;">Name</div>
-                        </div>
-                    </label>
-                    <div class="form-input-wide" data-layout="full" style="position: relative;">
-                        <div data-wrapper-react="true"><span class="form-sub-label-container" data-input-type="first"
-                                style="vertical-align: top;"><input type="text" id="first_3" name="q3_name[first]"
-                                    class="form-textbox validate[required]" data-defaultvalue="" size="10" readonly=""
-                                    tabindex="-1" data-component="first" aria-labelledby="label_3 sublabel_3_first"
-                                    required="" value=""><span class="form-sub-label" data-testid="undefined">
-                                    <div class="editor-container editorHasText" style="display: inline-block;">
-                                        <div class="inlineEditor" placeholder="Type a sublabel" format="text"
-                                            contenteditable="true" data-gramm="false">First Name</div>
-                                    </div>
-                                </span></span><span class="form-sub-label-container" data-input-type="last"
-                                style="vertical-align: top;"><input type="text" id="last_3" name="q3_name[last]"
-                                    class="form-textbox validate[required]" data-defaultvalue="" size="15" readonly=""
-                                    tabindex="-1" data-component="last" aria-labelledby="label_3 sublabel_3_last"
-                                    required="" value=""><span class="form-sub-label" data-testid="undefined">
-                                    <div class="editor-container editorHasText" style="display: inline-block;">
-                                        <div class="inlineEditor" placeholder="Type a sublabel" format="text"
-                                            contenteditable="true" data-gramm="false">Last Name</div>
-                                    </div>
-                                </span></span></div>
-                    </div>
-                </div>
-                <div class="dragHandle">
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                </div>
-                <div id="app_wizards" class="moodular collabUsers-userList"></div>
-            </li>
-            <li id="id_4" data-type="control_email" data-shrinked="true" data-qid="4" data-order="3" data-selectioncount="0"
-                class="form-line clearfix isNotSelected form-line-column lineAlignment-Auto-Top isRequired form-col-1"
-                tabindex="0" aria-label="Email Field Required " role="group" style="z-index: 1;">
-                <div class="question-wrapper questionWrapper "><label id="label_4"
-                        class="form-label form-label-top form-label-auto form-required-field" for="none"
-                        style="width: 100%;">
-                        <div class="editor-container editorHasText" style="display: inline-block; width: 100%;">
-                            <div class="inlineEditor" placeholder="Type a question" format="text" contenteditable="true"
-                                data-gramm="false" style="width: 100%;">E-mail</div>
-                        </div>
-                    </label>
-                    <div class="form-input-wide" data-layout="half" style="position: relative;"><span
-                            class="form-sub-label-container" style="vertical-align: top;"><input type="email" id="input_4"
-                                name="q4_email" class="form-textbox validate[required, Email]" data-defaultvalue=""
-                                size="310" readonly="" tabindex="-1" placeholder="ex: myname@example.com"
-                                data-component="email" aria-labelledby="label_4 sublabel_input_4" required="" value=""
-                                style="width: 310px;"><span class="form-sub-label" data-testid="undefined">
-                                <div class="editor-container editorHasText" style="display: inline-block;">
-                                    <div class="inlineEditor" placeholder="Type a sublabel" format="text"
-                                        contenteditable="true" data-gramm="false">example@example.com</div>
-                                </div>
-                            </span></span></div>
-                </div>
-                <div class="dragHandle">
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                </div>
-                <div id="app_wizards" class="moodular collabUsers-userList"></div>
-            </li>
-            <li id="id_14" data-type="control_phone" data-shrinked="true" data-qid="14" data-order="4"
-                data-selectioncount="0"
-                class="form-line clearfix isNotSelected form-line-column lineAlignment-Auto-Top form-col-2" tabindex="0"
-                aria-label="Phone Field " role="group" style="z-index: 1;">
-                <div class="question-wrapper questionWrapper "><label id="label_14"
-                        class="form-label form-label-top form-label-auto" for="none" style="width: 100%;">
-                        <div class="editor-container editorHasText" style="display: inline-block; width: 100%;">
-                            <div class="inlineEditor" placeholder="Type a question" format="text" contenteditable="true"
-                                data-gramm="false" style="width: 100%;">Phone Number</div>
-                        </div>
-                    </label>
-                    <div class="form-input-wide" data-layout="half" style="position: relative;"><span
-                            class="form-sub-label-container" style="vertical-align: top;"><input type="tel"
-                                id="input_14_full" name="q14_phoneNumber[full]" data-type="mask-number"
-                                class="mask-phone-number form-textbox validate[Fill Mask]" data-defaultvalue=""
-                                data-masked="true" readonly="" tabindex="-1" placeholder="(000) 000-0000"
-                                data-component="phone" aria-labelledby="label_14" value="" style="width: 310px;"><span
-                                class="form-sub-label" data-testid="undefined">
-                                <div class="editor-container editorNoText" style="display: inline-block;">
-                                    <div class="inlineEditor" placeholder="Type a sublabel" format="text"
-                                        contenteditable="true" data-gramm="false"></div>
-                                </div>
-                            </span></span></div>
-                </div>
-                <div class="dragHandle">
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                </div>
-                <div id="app_wizards" class="moodular collabUsers-userList"></div>
-            </li>
-            <li id="id_7" data-type="control_fileupload" data-shrinked="true" data-qid="7" data-order="5"
-                data-selectioncount="0"
-                class="form-line clearfix isNotSelected form-line-column lineAlignment-Top form-col-3" tabindex="0"
-                aria-label="File Upload Field " role="group" style="z-index: 1;">
-                <div class="question-wrapper questionWrapper "><label id="label_7" class="form-label form-label-top"
-                        for="none" style="width: 100%;">
-                        <div class="editor-container editorHasText" style="display: inline-block; width: 100%;">
-                            <div class="inlineEditor" placeholder="Type a question" format="text" contenteditable="true"
-                                data-gramm="false" style="width: 100%;">Upload your Cover Letter</div>
-                        </div>
-                    </label>
-                    <div class="form-input-wide" data-layout="full" style="position: relative;">
-                        <div class="jfQuestion-fields" data-wrapper-react="true">
-                            <div class="jfField isFilled">
-                                <div class="jfUpload-wrapper">
-                                    <div class="jfUpload-container">
-                                        <div class="jfUpload-button-container">
-                                            <div class="jfUpload-button" aria-hidden="true" tabindex="0" data-version="v2"
-                                                style="display: none;">
-                                                <div class="editor-container editorHasText" style="display: inline-block;">
-                                                    <div class="inlineEditor" placeholder="" format="text"
-                                                        contenteditable="true" data-gramm="false">Upload a File</div>
-                                                </div>
-                                                <div class="jfUpload-heading forDesktop">Drag and drop files here</div>
-                                                <div class="jfUpload-heading forMobile">Choose a file</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="jfUpload-files-container">
-                                        <div class="qq-uploader" data-component="fileupload">
-                                            <div class="form-upload-multiple qq-upload-button">Upload a File<div
-                                                    class="jfUpload-heading forDesktop">Drag and drop files here</div>
-                                                <div class="jfUpload-heading forMobile">Choose a file</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><span class="form-sub-label-container" style="vertical-align: top;"><span
-                                        class="form-sub-label" data-testid="undefined">
-                                        <div class="editor-container editorNoText" style="display: inline-block;">
-                                            <div class="inlineEditor" placeholder="Type a sublabel" format="text"
-                                                contenteditable="true" data-gramm="false"></div>
-                                        </div>
-                                    </span></span>
-                            </div><span class="cancelText" style="display: none;">Cancel</span><span class="ofText"
-                                style="display: none;">of</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="dragHandle">
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                </div>
-                <div id="app_wizards" class="moodular collabUsers-userList"></div>
-            </li>
-            <li id="id_2" data-type="control_fileupload" data-shrinked="true" data-qid="2" data-order="6"
-                data-selectioncount="0"
-                class="form-line clearfix isNotSelected form-line-column lineAlignment-Top isRequired form-col-4"
-                tabindex="0" aria-label="File Upload Field Required " role="group" style="z-index: 1;">
-                <div class="question-wrapper questionWrapper "><label id="label_2"
-                        class="form-label form-label-top form-required-field" for="none" style="width: 100%;">
-                        <div class="editor-container editorHasText" style="display: inline-block; width: 100%;">
-                            <div class="inlineEditor" placeholder="Type a question" format="text" contenteditable="true"
-                                data-gramm="false" style="width: 100%;">Upload your CV</div>
-                        </div>
-                    </label>
-                    <div class="form-input-wide" data-layout="full" style="position: relative;">
-                        <div class="jfQuestion-fields" data-wrapper-react="true">
-                            <div class="jfField isFilled">
-                                <div class="jfUpload-wrapper">
-                                    <div class="jfUpload-container">
-                                        <div class="jfUpload-button-container">
-                                            <div class="jfUpload-button" aria-hidden="true" tabindex="0" data-version="v2"
-                                                style="display: none;">
-                                                <div class="editor-container editorHasText" style="display: inline-block;">
-                                                    <div class="inlineEditor" placeholder="" format="text"
-                                                        contenteditable="true" data-gramm="false">Upload a File</div>
-                                                </div>
-                                                <div class="jfUpload-heading forDesktop">Drag and drop files here</div>
-                                                <div class="jfUpload-heading forMobile">Choose a file</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="jfUpload-files-container">
-                                        <div class="qq-uploader" data-component="fileupload">
-                                            <div class="form-upload-multiple validate[required] qq-upload-button">Upload a
-                                                File<div class="jfUpload-heading forDesktop">Drag and drop files here</div>
-                                                <div class="jfUpload-heading forMobile">Choose a file</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><span class="form-sub-label-container" style="vertical-align: top;"><span
-                                        class="form-sub-label" data-testid="undefined">
-                                        <div class="editor-container editorNoText" style="display: inline-block;">
-                                            <div class="inlineEditor" placeholder="Type a sublabel" format="text"
-                                                contenteditable="true" data-gramm="false"></div>
-                                        </div>
-                                    </span></span>
-                            </div><span class="cancelText" style="display: none;">Cancel</span><span class="ofText"
-                                style="display: none;">of</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="dragHandle">
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                </div>
-                <div id="app_wizards" class="moodular collabUsers-userList"></div>
-            </li>
-            <li id="id_6" data-type="control_radio" data-qid="6" data-order="7" data-selectioncount="0"
-                class="form-line clearfix isNotSelected lineAlignment-Auto-Top isRequired" tabindex="0"
-                aria-label="Single Choice Field Required " role="group" style="z-index: 1;">
-                <div class="question-wrapper questionWrapper "><label id="label_6"
-                        class="form-label form-label-top form-label-auto form-required-field" for="none"
-                        style="width: 100%;">
-                        <div class="editor-container editorHasText" style="display: inline-block; width: 100%;">
-                            <div class="inlineEditor" placeholder="Type a question" format="text" contenteditable="true"
-                                data-gramm="false" style="width: 100%;">Residency Status</div>
-                        </div>
-                    </label>
-                    <div class="form-input-wide" data-layout="full" style="position: relative;">
-                        <div class="form-single-column" role="group" aria-labelledby="label_6" data-component="radio"><span
-                                class="form-radio-item" style="clear: left;"><span class="dragger-item"></span><input
-                                    aria-describedby="label_6" type="radio" tabindex="-1"
-                                    class="form-radio validate[required]" id="input_6_0" name="q6_residencyStatus"
-                                    required="" value="Citizen"><span>
-                                    <div class="editor-container editorHasText" style="display: inline-block;"><label
-                                            class="inlineEditor" placeholder="Type an option" format="text"
-                                            contenteditable="true" data-gramm="false" id="label_input_6_0"
-                                            style="display: inline-block;">Citizen</label></div>
-                                </span></span><span class="form-radio-item" style="clear: left;"><span
-                                    class="dragger-item"></span><input aria-describedby="label_6" type="radio" tabindex="-1"
-                                    class="form-radio validate[required]" id="input_6_1" name="q6_residencyStatus"
-                                    required="" value="Permanent Resident"><span>
-                                    <div class="editor-container editorHasText" style="display: inline-block;"><label
-                                            class="inlineEditor" placeholder="Type an option" format="text"
-                                            contenteditable="true" data-gramm="false" id="label_input_6_1"
-                                            style="display: inline-block;">Permanent Resident</label></div>
-                                </span></span><span class="form-radio-item" style="clear: left;"><span
-                                    class="dragger-item"></span><input aria-describedby="label_6" type="radio" tabindex="-1"
-                                    class="form-radio validate[required]" id="input_6_2" name="q6_residencyStatus"
-                                    required="" value="Work Permit"><span>
-                                    <div class="editor-container editorHasText" style="display: inline-block;"><label
-                                            class="inlineEditor" placeholder="Type an option" format="text"
-                                            contenteditable="true" data-gramm="false" id="label_input_6_2"
-                                            style="display: inline-block;">Work Permit</label></div>
-                                </span></span></div>
-                    </div>
-                </div>
-                <div class="dragHandle">
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                </div>
-                <div id="app_wizards" class="moodular collabUsers-userList"></div>
-            </li>
-            <li id="id_8" data-type="control_textarea" data-qid="8" data-order="8" data-selectioncount="0"
-                class="form-line clearfix isNotSelected lineAlignment-Auto-Top" tabindex="0" aria-label="Long Text Field "
-                role="group" style="z-index: 1;">
-                <div class="question-wrapper questionWrapper "><label id="label_8"
-                        class="form-label form-label-top form-label-auto" for="none" style="width: 100%;">
-                        <div class="editor-container editorHasText" style="display: inline-block; width: 100%;">
-                            <div class="inlineEditor" placeholder="Type a question" format="text" contenteditable="true"
-                                data-gramm="false" style="width: 100%;">Message / Additional Info</div>
-                        </div>
-                    </label>
-                    <div class="form-input-wide" data-layout="full" style="position: relative;"><span
-                            class="form-sub-label-container" style="vertical-align: top;"><textarea id="input_8"
-                                class="form-textarea" name="q8_message" data-component="textarea" aria-labelledby="label_8"
-                                placeholder="Type here..." style="width: 648px; height: 163px;"></textarea><span
-                                class="form-sub-label" data-testid="undefined">
-                                <div class="editor-container editorNoText" style="display: inline-block;">
-                                    <div class="inlineEditor" placeholder="Type a sublabel" format="text"
-                                        contenteditable="true" data-gramm="false"></div>
-                                </div>
-                            </span></span></div>
-                </div>
-                <div class="dragHandle">
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                </div>
-                <div id="app_wizards" class="moodular collabUsers-userList"></div>
-            </li>
-            <li id="id_1" data-type="control_button" data-qid="1" data-order="9" data-selectioncount="0"
-                class="form-line clearfix isNotSelected lineAlignment-Auto lastOne" tabindex="0" aria-label="Submit Field "
-                role="group" style="z-index: 1;">
-                <div>
-                    <div class="question-wrapper questionWrapper ">
-                        <div class="form-input-wide" data-layout="full" style="position: relative;">
-                            <div data-align="auto"
-                                class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
-                                <div class="editor-container editorHasText" style="display: inline-block;"><button
-                                        class="form-submit-button submit-button jf-form-buttons jsTest-submitField"
-                                        placeholder="" format="text" contenteditable="true" data-gramm="false" id="input_1"
-                                        type="button" data-component="button" data-content="">Submit Form</button></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dragHandle">
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                    <div class="dragHandle-point"></div>
-                </div>
-                <div id="app_wizards" class="moodular collabUsers-userList"></div>
-            </li>
-        </ul>
-    </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+    <script src='/javascripts/validateForms.js'></script>
 </body>
 </html>

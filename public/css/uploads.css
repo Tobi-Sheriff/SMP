@@ -1,10 +1,10 @@
+body {
+    background-color: rgb(255, 254, 245);
+}
+
 /* .form-all {
     margin: 0 auto 20px!important;
     border-radius: 3px;
     box-shadow: 0 4px 4px rgba(87,100,126,.21);
     background-color: #fff;;
 } */
-
-body {
-    background-color: green;
-}

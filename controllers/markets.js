@@ -25,7 +25,7 @@ module.exports.createMarket = async (req, res, next) => {
 module.exports.showMarket = async (req, res,) => {
     const market = await Market.findById(req.params.id).populate({
         path: 'images',
-        path: 'reviews',
+        // path: 'reviews',
         populate: {
             path: 'author'
         }

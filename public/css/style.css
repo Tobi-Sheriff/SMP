@@ -598,10 +598,12 @@ a:hover {
     margin: 50px 0px;
     min-height: auto;
     max-height: auto;
+    /* background-color: green; */
 }
 .tshirt_img img{
-    min-height: 50px;
+    min-height: 200px;
     max-height: 100px;
+    width: 100%;
 }
 
 .btn_main {
